@@ -14,8 +14,9 @@ namespace GeekStore.Catalogo.Domain
         public string Imagem { get; private set; }
         public int QuantidadeEstoque { get; private set; }
         public Categoria Categoria { get; private set; }
+        public Dimensoes Dimensoes { get; private set; }
 
-        public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem)
+        public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem, Dimensoes dimensoes)
         {
             CategoriaId = categoriaId;
             Nome = nome;
@@ -25,6 +26,7 @@ namespace GeekStore.Catalogo.Domain
             Valor = valor;
             DataCadastro = dataCadastro;
             Imagem = imagem;
+            Dimensoes = dimensoes;
 
             Validar();
         }
@@ -66,8 +68,8 @@ namespace GeekStore.Catalogo.Domain
         {
             Validations.ValidateIfEmpty(Nome, "O Campo Nome do produto não pode estar vazio");
             Validations.ValidateIfEmpty(Descricao, "O Campo Descricao do produto não pode estar vazio");
-            Validations.ValidateIfDifferent(CategoriaId, Guid.Empty, "O Campo CategoriaId do produto não pode estar vazio");
-            Validations.ValidateIfSmallerEqualsMinimum(Valor, 0, "O Campo Valor do produto precisa ser maior que 0");
+            Validations.ValidateIfEquals(CategoriaId, Guid.Empty, "O Campo CategoriaId do produto não pode estar vazio");
+            Validations.ValidateIfSmallerThan(Valor, 1, "O Campo Valor do produto precisa ser maior que 0");
             Validations.ValidateIfEmpty(Imagem, "O Campo Imagem do produto não pode estar vazio");
         }
     }
