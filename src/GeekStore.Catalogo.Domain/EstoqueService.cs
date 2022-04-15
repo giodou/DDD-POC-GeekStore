@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
+using GeekStore.Catalogo.Domain.Events;
+using GeekStore.Core.Bus;
 
 namespace GeekStore.Catalogo.Domain
 {
     public class EstoqueService : IEstoqueService
     {   
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IMediatrHandler _bus;
 
-        public EstoqueService(IProdutoRepository produtoRepository)
+        public EstoqueService(IProdutoRepository produtoRepository, IMediatrHandler bus)
         {
             _produtoRepository = produtoRepository;
+            _bus = bus;
         }
 
         public async Task<bool> DebitarEstoque(Guid produtoId, int quantidade)
@@ -21,6 +25,12 @@ namespace GeekStore.Catalogo.Domain
             if (!produto.PossuiEstoque(quantidade)) return false;
 
             produto.DebitarEstoque(quantidade);
+
+            //TODO: parametrizar a quantidade de mínima de estoque
+            if (produto.QuantidadeEstoque < 10)
+            {
+                await _bus.PublishEvent(new EstoqueMinimoAtingidoEvent(produto.Id, produto.QuantidadeEstoque));
+            }
 
             _produtoRepository.Atualizar(produto);
             return await _produtoRepository.UnitOfWork.Commit();
