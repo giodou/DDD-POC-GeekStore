@@ -31,6 +31,8 @@ namespace GeekStore.Catalogo.Domain
             Validar();
         }
 
+        protected Produto() {}
+
         public void Ativar() => Ativo = true;
         public void Desativar() => Ativo = false;
 
