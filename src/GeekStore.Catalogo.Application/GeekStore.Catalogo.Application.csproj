@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="automapper" Version="10.1.1" />
+    <PackageReference Include="automapper" Version="8.1.1" />
   </ItemGroup>
 
 </Project>

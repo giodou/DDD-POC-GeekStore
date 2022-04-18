@@ -1,3 +1,4 @@
+using AutoMapper;
 using GeekStore.Catalogo.Application.AutoMapper;
 using GeekStore.Catalogo.Data;
 using GeekStore.WebApp.MVC.Data;
@@ -73,7 +74,7 @@ namespace GeekStore.WebApp.MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Catalogo}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

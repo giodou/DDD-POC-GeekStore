@@ -2,7 +2,9 @@
 using GeekStore.Catalogo.Data;
 using GeekStore.Catalogo.Data.Repository;
 using GeekStore.Catalogo.Domain;
+using GeekStore.Catalogo.Domain.Events;
 using GeekStore.Core.Bus;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GeekStore.WebApp.MVC.Setup
@@ -19,6 +21,8 @@ namespace GeekStore.WebApp.MVC.Setup
             services.AddScoped<IProdutoAppService, ProdutoAppService>();
             services.AddScoped<IEstoqueService, EstoqueService>();
             services.AddScoped<CatalogoContext>();
+
+            services.AddScoped<INotificationHandler<EstoqueMinimoAtingidoEvent>, ProdutoEventHandler>();
         }
     }
 }
