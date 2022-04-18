@@ -25,13 +25,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekStore.Core", "src\GeekS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BEC06025-3340-41E9-87C6-4CC617350A43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekStore.Catalogo.Domain.Tests", "tests\GeekStore.Catalogo.Domain.Tests\GeekStore.Catalogo.Domain.Tests.csproj", "{44CD8289-E8BA-4BBA-90B5-E85B30883A9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekStore.Catalogo.Domain.Tests", "tests\GeekStore.Catalogo.Domain.Tests\GeekStore.Catalogo.Domain.Tests.csproj", "{44CD8289-E8BA-4BBA-90B5-E85B30883A9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekStore.Catalogo.Data", "src\GeekStore.Catalogo.Data\GeekStore.Catalogo.Data.csproj", "{68214B45-6450-4F0F-BFF0-AF6994D71253}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekStore.Catalogo.Data", "src\GeekStore.Catalogo.Data\GeekStore.Catalogo.Data.csproj", "{68214B45-6450-4F0F-BFF0-AF6994D71253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekStore.Catalogo.Application", "src\GeekStore.Catalogo.Application\GeekStore.Catalogo.Application.csproj", "{13CBF6E7-160D-4428-AB43-03752104F80B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekStore.Catalogo.Application", "src\GeekStore.Catalogo.Application\GeekStore.Catalogo.Application.csproj", "{13CBF6E7-160D-4428-AB43-03752104F80B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekStore.WebApp.MVC", "GeekStore.WebApp.MVC\GeekStore.WebApp.MVC.csproj", "{CD44B1C2-6703-4DC5-8C88-88E2C0BF2810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekStore.WebApp.MVC", "GeekStore.WebApp.MVC\GeekStore.WebApp.MVC.csproj", "{CD44B1C2-6703-4DC5-8C88-88E2C0BF2810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekStore.Vendas.Domain", "src\GeekStore.Vendas.Domain\GeekStore.Vendas.Domain.csproj", "{C07FDAC4-1BBB-4A2A-8B5E-B1358AA91450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekStore.Vendas.Application", "src\GeekStore.Vendas.Application\GeekStore.Vendas.Application.csproj", "{6F3267BC-54D9-44E8-8135-68AA71187A2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekStore.Vendas.Data", "src\GeekStore.Vendas.Data\GeekStore.Vendas.Data.csproj", "{7527D0E0-19A4-4DD3-8CA8-930A3D422892}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,18 @@ Global
 		{CD44B1C2-6703-4DC5-8C88-88E2C0BF2810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD44B1C2-6703-4DC5-8C88-88E2C0BF2810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD44B1C2-6703-4DC5-8C88-88E2C0BF2810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C07FDAC4-1BBB-4A2A-8B5E-B1358AA91450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C07FDAC4-1BBB-4A2A-8B5E-B1358AA91450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C07FDAC4-1BBB-4A2A-8B5E-B1358AA91450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C07FDAC4-1BBB-4A2A-8B5E-B1358AA91450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F3267BC-54D9-44E8-8135-68AA71187A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F3267BC-54D9-44E8-8135-68AA71187A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F3267BC-54D9-44E8-8135-68AA71187A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F3267BC-54D9-44E8-8135-68AA71187A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7527D0E0-19A4-4DD3-8CA8-930A3D422892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7527D0E0-19A4-4DD3-8CA8-930A3D422892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7527D0E0-19A4-4DD3-8CA8-930A3D422892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7527D0E0-19A4-4DD3-8CA8-930A3D422892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +99,9 @@ Global
 		{68214B45-6450-4F0F-BFF0-AF6994D71253} = {3996492A-D6BF-403C-91A6-63BFF0C23E11}
 		{13CBF6E7-160D-4428-AB43-03752104F80B} = {3996492A-D6BF-403C-91A6-63BFF0C23E11}
 		{CD44B1C2-6703-4DC5-8C88-88E2C0BF2810} = {12557959-7566-418D-9B64-3B17B2136669}
+		{C07FDAC4-1BBB-4A2A-8B5E-B1358AA91450} = {ABD10A2B-6506-49E8-B394-B419F1F6EA07}
+		{6F3267BC-54D9-44E8-8135-68AA71187A2E} = {ABD10A2B-6506-49E8-B394-B419F1F6EA07}
+		{7527D0E0-19A4-4DD3-8CA8-930A3D422892} = {ABD10A2B-6506-49E8-B394-B419F1F6EA07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15CD54E2-D2BF-4BE1-AB46-842FF0491131}
