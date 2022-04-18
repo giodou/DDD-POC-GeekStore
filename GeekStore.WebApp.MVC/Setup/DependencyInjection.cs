@@ -4,6 +4,7 @@ using GeekStore.Catalogo.Data.Repository;
 using GeekStore.Catalogo.Domain;
 using GeekStore.Catalogo.Domain.Events;
 using GeekStore.Core.Bus;
+using GeekStore.Vendas.Application.Commands;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -23,6 +24,10 @@ namespace GeekStore.WebApp.MVC.Setup
             services.AddScoped<CatalogoContext>();
 
             services.AddScoped<INotificationHandler<EstoqueMinimoAtingidoEvent>, ProdutoEventHandler>();
+
+            //Vendas
+            services.AddScoped<IRequestHandler<AdicionarItemPedidoCommand, bool>, PedidoCommandHandler>();
+
         }
     }
 }
