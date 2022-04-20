@@ -21,9 +21,11 @@
     <ProjectReference Include="..\src\GeekStore.Catalogo.Domain\GeekStore.Catalogo.Domain.csproj" />
     <ProjectReference Include="..\src\GeekStore.Core\GeekStore.Core.csproj" />
     <ProjectReference Include="..\src\GeekStore.Vendas.Application\GeekStore.Vendas.Application.csproj" />
+    <ProjectReference Include="..\src\GeekStore.Vendas.Data\GeekStore.Vendas.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Extensions\" />
     <Folder Include="Setup\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>

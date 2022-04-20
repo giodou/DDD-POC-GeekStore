@@ -1,5 +1,6 @@
 ﻿using GeekStore.Core.DomainObjects;
 using System;
+using GeekStore.Core.Messages.CommonMessages.DomainEvents;
 
 namespace GeekStore.Catalogo.Domain.Events
 {

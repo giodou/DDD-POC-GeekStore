@@ -1,6 +1,7 @@
 using AutoMapper;
 using GeekStore.Catalogo.Application.AutoMapper;
 using GeekStore.Catalogo.Data;
+using GeekStore.Vendas.Data;
 using GeekStore.WebApp.MVC.Data;
 using GeekStore.WebApp.MVC.Setup;
 using MediatR;
@@ -31,6 +32,10 @@ namespace GeekStore.WebApp.MVC
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<CatalogoContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<VendasContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 

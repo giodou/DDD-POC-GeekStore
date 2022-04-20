@@ -3,8 +3,11 @@ using GeekStore.Catalogo.Data;
 using GeekStore.Catalogo.Data.Repository;
 using GeekStore.Catalogo.Domain;
 using GeekStore.Catalogo.Domain.Events;
-using GeekStore.Core.Bus;
+using GeekStore.Core.Communication.Mediator;
+using GeekStore.Core.Messages.CommonMessages.Notifications;
 using GeekStore.Vendas.Application.Commands;
+using GeekStore.Vendas.Data.Repository;
+using GeekStore.Vendas.Domain;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,8 +17,11 @@ namespace GeekStore.WebApp.MVC.Setup
     {
         public static void RegisterServices(this IServiceCollection services)
         {
-            //Domain Bus (Mediator)
-            services.AddScoped<IMediatrHandler, MediatrHandler>();
+            //Mediator
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
+
+            //Notifications
+            services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
 
             //Catálogo
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
@@ -26,6 +32,7 @@ namespace GeekStore.WebApp.MVC.Setup
             services.AddScoped<INotificationHandler<EstoqueMinimoAtingidoEvent>, ProdutoEventHandler>();
 
             //Vendas
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
             services.AddScoped<IRequestHandler<AdicionarItemPedidoCommand, bool>, PedidoCommandHandler>();
 
         }

@@ -1,7 +1,6 @@
-﻿using GeekStore.Core.Messages;
-using System;
+﻿using System;
 
-namespace GeekStore.Core.DomainObjects
+namespace GeekStore.Core.Messages.CommonMessages.DomainEvents
 {
     public class DomainEvent : Event
     {

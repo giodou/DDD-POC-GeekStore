@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GeekStore.Core\GeekStore.Core.csproj" />
+    <ProjectReference Include="..\GeekStore.Vendas.Domain\GeekStore.Vendas.Domain.csproj" />
   </ItemGroup>
 
 </Project>

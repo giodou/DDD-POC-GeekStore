@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GeekStore.Catalogo.Domain.Events;
-using GeekStore.Core.Bus;
+using GeekStore.Core.Communication.Mediator;
 
 namespace GeekStore.Catalogo.Domain
 {
     public class EstoqueService : IEstoqueService
     {   
         private readonly IProdutoRepository _produtoRepository;
-        private readonly IMediatrHandler _bus;
+        private readonly IMediatorHandler _bus;
 
-        public EstoqueService(IProdutoRepository produtoRepository, IMediatrHandler bus)
+        public EstoqueService(IProdutoRepository produtoRepository, IMediatorHandler bus)
         {
             _produtoRepository = produtoRepository;
             _bus = bus;
